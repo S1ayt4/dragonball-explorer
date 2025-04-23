@@ -17,8 +17,7 @@ La aplicación utiliza una API de Dragon Ball para obtener la información más 
 
 ## Cómo usar la aplicación
 1. Clona el repositorio a tu máquina local:
-```git clone https://github.com/S1ayt4/dragonball-explorer.git
-```
+`git clone https://github.com/S1ayt4/dragonball-explorer.git`
 
 2. Accede al directorio del proyecto:
 `cd dragonball-explorer`
