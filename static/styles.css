@@ -1,0 +1,33 @@
+body {
+    font-family: sans-serif;
+    margin: 2em;
+    background: url('../static/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+}
+
+.card {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+}
+
+.card img {
+    width: 300px;
+    max-width: 100%; /* Empêche le débordement au chargement */
+    height: auto;
+    margin-right: 2em;
+    border-radius: 10px;
+}
+
+.card ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.card li {
+    margin: 10px 0;
+}
