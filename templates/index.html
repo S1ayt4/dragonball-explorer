@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Información del Personaje de Dragon Ball</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 2em;
+            background: url('{{ url_for('static', filename='background.jpg') }}') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+        .card {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 2em;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center; /* Centrer l'image et le texte verticalement */
+        }
+        .card img {
+            width: 300px; /* Taille de l'image */
+            height: auto;
+            margin-right: 2em; /* Espacement entre l'image et le texte */
+            border-radius: 10px;
+        }
+        .card ul {
+            list-style-type: none; /* Retirer les puces de la liste */
+            padding-left: 0;
+        }
+        .card li {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Buscar un personaje de Dragon Ball</h1>
+    <form method="POST">
+        <input name="name" placeholder="Ej: Goku, Vegeta..." required>
+        <button type="submit">Buscar</button>
+    </form>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    {% if character %}
+    <div class="card">
+        <img src="{{ character['image'] }}" alt="{{ character['name'] }}">
+        <div>
+            <h2>{{ character['name'] }}</h2>
+            <ul>
+                {% for key, value in character.items() %}
+                    <li>
+                        <strong>{{ key.capitalize().replace('_', ' ') }} :</strong>
+                        {% if value is string %}
+                            {{ value }}
+                        {% elif value is iterable and value is not string %}
+                            <ul>
+                            {% for item in value %}
+                                <li>{{ item }}</li>
+                            {% endfor %}
+                            </ul>
+                        {% else %}
+                            {{ value }}
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% endif %}
+</body>
+</html>
