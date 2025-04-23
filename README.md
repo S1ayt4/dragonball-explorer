@@ -25,10 +25,10 @@ La aplicación utiliza una API de Dragon Ball para obtener la información más 
 3. Instala las dependencias necesarias (si usas pip):
 `pip install -r requirements.txt`
 
-Ejecuta la aplicación en tu entorno local:
+4. Ejecuta la aplicación en tu entorno local:
 `python app.py`
 
-5.Abre tu navegador y ve a http://localhost:5000.
+5. Abre tu navegador y ve a http://localhost:5000.
 
 ## Tecnologías usadas
 - Flask: Framework para crear aplicaciones web en Python.
